@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 const projects = [
   {
     title: 'Satellite Imagery Analytics Platform',
-    role: 'Sole Engineer · WESEE Naval R&D Lab',
+    role: 'AI Research Engineer · WESEE Naval R&D Lab',
     summary:
       'End-to-end satellite imagery analytics platform for maritime warship detection, deployed across multiple naval commands.',
     challenge:
@@ -20,7 +20,7 @@ const projects = [
   },
   {
     title: 'Offline GenAI Platform (Classified)',
-    role: 'Sole Engineer · WESEE Naval R&D Lab',
+    role: 'AI Research Engineer · WESEE Naval R&D Lab',
     summary:
       'Full-stack Generative AI platform for classified naval documentation, deployed on air-gapped private cloud with zero external dependencies.',
     challenge:
@@ -36,7 +36,7 @@ const projects = [
   },
   {
     title: 'Real-Time Multi-Camera Surveillance Engine',
-    role: 'Sole Engineer · WESEE Naval R&D Lab',
+    role: 'AI Research Engineer · WESEE Naval R&D Lab',
     summary:
       'Real-time surveillance analytics engine with multi-object tracking, trajectory prediction, and behavioral pattern detection on edge devices.',
     challenge:
@@ -52,7 +52,7 @@ const projects = [
   },
   {
     title: 'Agentic Coding Assistant (Self-Hosted)',
-    role: 'Sole Engineer · WESEE Naval R&D Lab',
+    role: 'AI Research Engineer · WESEE Naval R&D Lab',
     summary:
       'Agentic coding assistant powered by self-hosted open-weight LLMs, integrated into the lab\'s secure engineering workflow.',
     challenge:
