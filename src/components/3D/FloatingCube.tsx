@@ -24,9 +24,9 @@ function Network({ scrollY = 0 }: { scrollY?: number }) {
       pos[i * 3 + 2] = z
 
       const t = Math.random()
-      col[i * 3] = 0.02 + t * 0.04
-      col[i * 3 + 1] = 0.6 + t * 0.3
-      col[i * 3 + 2] = 0.75 + t * 0.2
+      col[i * 3] = 0.1 + t * 0.1
+      col[i * 3 + 1] = 0.7 + t * 0.3
+      col[i * 3 + 2] = 0.85 + t * 0.15
 
       nodes.push(new THREE.Vector3(x, y, z))
     }
@@ -53,16 +53,15 @@ function Network({ scrollY = 0 }: { scrollY?: number }) {
     scrollTarget.current += (scrollY * 0.0003 - scrollTarget.current) * 0.03
 
     if (groupRef.current) {
-      groupRef.current.rotation.y += (mouseTarget.current.x - groupRef.current.rotation.y) * 0.015
-      groupRef.current.rotation.x += (mouseTarget.current.y - groupRef.current.rotation.x) * 0.015
-      groupRef.current.position.y = -scrollTarget.current * 0.5
+      groupRef.current.rotation.y += (mouseTarget.current.x - groupRef.current.rotation.y) * 0.02
+      groupRef.current.rotation.x += (mouseTarget.current.y - groupRef.current.rotation.x) * 0.02
+      groupRef.current.position.y = -scrollTarget.current * 1.5
     }
 
     if (pointsRef.current) {
       const mat = pointsRef.current.material as THREE.PointsMaterial
-      const pulse = Math.sin(state.clock.elapsedTime * 0.3) * 0.04 + 0.1
+      const pulse = Math.sin(state.clock.elapsedTime * 0.4) * 0.06 + 0.18
       mat.size = pulse
-      mat.opacity = 0.35 + Math.sin(state.clock.elapsedTime * 0.2) * 0.1
     }
   })
 
@@ -84,10 +83,10 @@ function Network({ scrollY = 0 }: { scrollY?: number }) {
           />
         </bufferGeometry>
         <pointsMaterial
-          size={0.12}
+          size={0.25}
           vertexColors
           transparent
-          opacity={0.5}
+          opacity={0.6}
           sizeAttenuation
           depthWrite={false}
         />
@@ -102,7 +101,7 @@ function Network({ scrollY = 0 }: { scrollY?: number }) {
             itemSize={3}
           />
         </bufferGeometry>
-        <lineBasicMaterial color="#06b6d4" transparent opacity={0.05} depthWrite={false} />
+        <lineBasicMaterial color="#06b6d4" transparent opacity={0.12} depthWrite={false} />
       </lineSegments>
     </group>
   )

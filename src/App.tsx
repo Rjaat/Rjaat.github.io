@@ -45,9 +45,9 @@ function App() {
             <FloatingCube scrollY={scrollY} />
             <EffectComposer>
               <Bloom
-                luminanceThreshold={0.6}
-                luminanceSmoothing={0.1}
-                intensity={0.3}
+                luminanceThreshold={0.1}
+                luminanceSmoothing={0.9}
+                intensity={0.8}
                 mipmapBlur
               />
             </EffectComposer>
