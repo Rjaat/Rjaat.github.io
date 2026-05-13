@@ -39,25 +39,7 @@ const About = () => {
               and project management, distributed storage, internal networking — all
               on systems with no internet access and no vendor dependencies.
             </p>
-            <p>
-              The result is a rare combination: I can take an AI system from model
-              architecture and training data all the way to a deployed, containerized
-              application running on constrained hardware — and I own every layer
-              in between.
-            </p>
-            <p>
-              What makes my work different is that I also own the infrastructure — not
-              because I'm an infra engineer, but because these environments don't have one.
-              GPU cluster provisioning, self-hosted GitLab and Jira, distributed object
-              storage with SeaweedFS, internal SMTP and PKI — all on fully air-gapped
-              systems with zero vendor dependency. I build it because it has to exist.
-            </p>
-            <p>
-              The result is a rare combination: I can take an AI system from model
-              architecture and training data all the way to a deployed, containerized
-              application running on edge hardware in a disconnected environment — and
-              I own every layer in between.
-            </p>
+
           </motion.div>
 
           <motion.div
