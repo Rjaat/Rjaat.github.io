@@ -4,7 +4,7 @@ import * as THREE from 'three'
 
 const NODE_COUNT = 100
 const CONNECTION_DIST = 5
-const DEPTH = -15
+const DEPTH = -8
 
 function Network({ scrollY = 0 }: { scrollY?: number }) {
   const groupRef = useRef<THREE.Group>(null!)
@@ -16,9 +16,9 @@ function Network({ scrollY = 0 }: { scrollY?: number }) {
     const nodes: THREE.Vector3[] = []
 
     for (let i = 0; i < NODE_COUNT; i++) {
-      const x = (Math.random() - 0.5) * 24
-      const y = (Math.random() - 0.5) * 18
-      const z = (Math.random() - 0.5) * 12 + DEPTH
+      const x = (Math.random() - 0.5) * 16
+      const y = (Math.random() - 0.5) * 12
+      const z = (Math.random() - 0.5) * 8 + DEPTH
       pos[i * 3] = x
       pos[i * 3 + 1] = y
       pos[i * 3 + 2] = z
@@ -83,12 +83,12 @@ function Network({ scrollY = 0 }: { scrollY?: number }) {
           />
         </bufferGeometry>
         <pointsMaterial
-          size={0.25}
+          size={0.3}
           vertexColors
           transparent
-          opacity={0.6}
+          opacity={0.7}
           sizeAttenuation
-          depthWrite={false}
+          depthWrite={true}
         />
       </points>
 

@@ -37,10 +37,10 @@ function App() {
 
   return (
     <div className="relative min-h-screen bg-surface">
-      <div className="fixed inset-0 -z-10 cyber-grid opacity-40" />
+      <div className="fixed inset-0 -z-30 cyber-grid opacity-40 pointer-events-none" />
       <CursorGlow />
-      <div className="fixed inset-0 -z-20">
-        <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
+      <div className="fixed inset-0 -z-20 pointer-events-none">
+        <Canvas camera={{ position: [0, 0, 5], fov: 60 }} style={{ pointerEvents: 'none' }}>
           <Suspense fallback={null}>
             <FloatingCube scrollY={scrollY} />
             <EffectComposer>
