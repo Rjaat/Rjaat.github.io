@@ -4,18 +4,12 @@ const About = () => {
   return (
     <section id="about" className="py-32">
       <div className="max-w-5xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-20"
-        >
+        <div className="mb-20">
           <p className="section-label mb-4">About</p>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-            About
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-4 text-white">
+            Philosophy & Background
           </h2>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
           <motion.div

@@ -9,7 +9,6 @@ import Contact from './components/Contact'
 function App() {
   return (
     <div className="relative min-h-screen bg-surface">
-      <div className="noise" />
       <Navbar />
       <Hero />
       <Projects />
