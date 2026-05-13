@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion'
-import { Mail, Github, Linkedin, MapPin } from 'lucide-react'
+import { Mail, Github, Linkedin, MapPin, FileText } from 'lucide-react'
 
 const links = [
   { icon: Mail, href: 'mailto:rajgadhwal99@gmail.com', label: 'rajgadhwal99@gmail.com' },
   { icon: Github, href: 'https://github.com/Rjaat', label: 'github.com/Rjaat' },
   { icon: Linkedin, href: 'https://linkedin.com/in/rajesh-choudharyy', label: 'rajesh-choudharyy' },
   { icon: MapPin, href: '#', label: 'New Delhi, India' },
+  { icon: FileText, href: '/Rajesh_Jat_Resume.pdf', label: 'Download Resume' },
 ]
 
 const container = {
