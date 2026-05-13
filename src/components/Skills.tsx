@@ -2,63 +2,57 @@ import { motion } from 'framer-motion'
 
 const categories = [
   {
-    title: 'ML Systems',
+    title: 'Computer Vision & Perception',
     skills: [
-      'Object Detection & Tracking (OBB, multi-stage)',
-      'Pose & Motion Estimation',
-      'Model Training & Fine-Tuning',
-      'Geospatial & Satellite Imagery Analysis',
-      'OpenCV, FFmpeg, Rasterio, QGIS',
+      'Multi-stage object detection and tracking (OBB, DeepStream pipelines, pose/motion estimation)',
+      'Geospatial and satellite imagery analysis — Rasterio, QGIS, tiled inference, coordinate extraction',
+      'Real-time video analytics: multi-stream processing, trajectory prediction, behavioral pattern detection',
+      'Model training, fine-tuning, and deployment for vision tasks at the edge',
     ],
   },
   {
-    title: 'GenAI & LLM Infrastructure',
+    title: 'LLM & GenAI Systems',
     skills: [
-      'Open-Weight LLMs (LLaMA, Mistral)',
-      'RAG System Design (LangChain, LlamaIndex, ChromaDB)',
-      'Agentic Workflows & Prompt Engineering',
-      'vLLM Serving & Optimization',
-      'Neural TTS & Multimodal Systems',
+      'Open-weight LLM deployment and serving with optimized inference engines (vLLM, SGLang, TensorRT-LLM)',
+      'RAG pipeline architecture: retrieval orchestration, vector databases, hybrid search, re-ranking',
+      'Agentic workflows: tool-use, code generation, multi-step reasoning with self-hosted models',
+      'Multimodal systems: vision-language models, neural TTS, document intelligence pipelines',
     ],
   },
   {
-    title: 'GPU & Inference',
+    title: 'Inference Engineering',
     skills: [
-      'NVIDIA CUDA, TensorRT (INT8/FP16)',
-      'DeepStream SDK',
-      'NVIDIA Jetson Edge Deployment',
-      'Quantization, Tiled Inference, Low-Latency Serving',
-      'Inference Benchmarking & Optimization',
+      'GPU inference optimization: CUDA, TensorRT, kernel fusion, quantization, tiled inference',
+      'Edge deployment on NVIDIA Jetson with hardware-accelerated pipelines',
+      'Cross-platform inference strategy: target-dependent optimization for NVIDIA, Apple Silicon, and CPU backends',
+      'End-to-end latency budgeting, throughput benchmarking, memory footprint optimization',
     ],
   },
   {
     title: 'Backend & Infrastructure',
     skills: [
-      'FastAPI, Flask, REST APIs',
-      'Docker, Microservices Architecture',
-      'Air-Gapped & Private-Cloud Deployments',
-      'AWS (EC2, S3), Azure',
-      'Linux Administration, Self-Hosted GitLab, Jira',
-      'SeaweedFS Distributed Storage',
+      'API design and microservices: FastAPI, Flask, RESTful architectures, containerized with Docker',
+      'Air-gapped and private-cloud infrastructure: full system design from bare metal to deployed service',
+      'Cloud platforms: AWS (EC2, S3), Azure — provisioning, networking, IAM, cost optimization',
+      'Full-stack infrastructure ownership: GPU cluster provisioning, distributed storage, self-hosted CI/CD and project management, all on air-gapped networks',
     ],
   },
   {
-    title: 'Frontend & Data',
+    title: 'Data & Frontend',
     skills: [
-      'ReactJS, Streamlit, JavaScript',
-      'PostgreSQL, MySQL, MongoDB',
-      'Vector Databases (ChromaDB, FAISS)',
-      'Python, C++, R',
+      'Relational and document databases: PostgreSQL, MySQL, MongoDB — schema design, query optimization',
+      'Vector databases for production RAG: ChromaDB, FAISS — indexing strategies, hybrid search, re-ranking',
+      'Operational dashboards and interfaces: ReactJS, Streamlit — real-time data visualization, map integration',
+      'Polyglot engineering: Python, C++, TypeScript, SQL — whatever the system demands',
     ],
   },
   {
-    title: 'Specialized Systems',
+    title: 'Domain-Deployed Systems',
     skills: [
-      'Maritime Surveillance Analytics',
-      'Defense-Grade Secure Deployments',
-      'Satellite Image Processing Pipelines',
-      'Real-Time Video Analytics at Edge',
-      'Internal PKI & Mail Infrastructure',
+      'Maritime surveillance and vessel detection: radar-optical fusion, AIS integration, geofencing',
+      'Defense-grade deployments: air-gapped architecture, DISA STIG hardening, zero-trust networking',
+      'Satellite image processing pipelines: orthorectification, pan-sharpening, change detection',
+      'Internal PKI, SMTP infrastructure, and secure enclave design for classified environments',
     ],
   },
 ]
@@ -86,13 +80,13 @@ const Skills = () => {
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="mb-20"
         >
-          <p className="section-label mb-4">Skills</p>
+          <p className="section-label mb-4">Capabilities</p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Technical Competencies
           </h2>
           <p className="text-muted max-w-2xl">
-            Full-stack AI engineering — from model training and quantized edge deployment to
-            air-gapped infrastructure and operational dashboards.
+            Deep expertise across the AI systems stack — model development, production inference,
+            infrastructure, and domain-specific deployment. I own the architecture, not just the implementation.
           </p>
         </motion.div>
 
