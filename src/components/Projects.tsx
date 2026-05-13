@@ -76,7 +76,7 @@ const projects = [
     tags: ['LLM Deployment', 'Agentic AI', 'Code Generation', 'Air-Gapped', 'Version Control Integration', 'GPU Inference'],
   },
   {
-    title: 'Vision-Language Model for Public Safety',
+    title: 'Real-Time Weapon Detection & VLM Investigation Pipeline',
     role: 'AI Systems Engineer (Contract) · Safespace Global',
     summary:
       'VLM-powered alerting system combining real-time weapon detection with automated vision-language investigation across schools and public venues.',
