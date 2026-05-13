@@ -7,8 +7,8 @@ const experiences = [
     location: 'New Delhi',
     period: 'Jul 2023 — Present',
     highlights: [
-      'Designed end-to-end satellite imagery analytics platform for maritime warship detection — orientation-aware detection models, geospatial analysis, API backend, operational dashboard; deployed across multiple naval commands',
-      'Architected classified offline GenAI platform on air-gapped private cloud: RAG system with optimized inference, automated report/presentation generator; reduced analyst documentation turnaround by ~60%',
+      'Designed end-to-end satellite imagery analytics platform for maritime warship detection: orientation-aware detection models, geospatial analysis, API backend, operational dashboard — deployed across multiple naval commands',
+      'Architected classified offline GenAI platform on air-gapped private cloud: RAG system with optimized inference, automated report and presentation generator — reduced analyst documentation turnaround by ~60%',
       'Engineered real-time multi-camera surveillance with sub-50ms latency via model quantization and hardware-accelerated pipelines on edge devices',
       'Built multimodal document intelligence system combining open-weight LLMs with neural TTS for podcast-style audio briefs',
       'Designed and deployed agentic coding assistant on self-hosted LLMs; reduced boilerplate authoring time by ~40% across engineering team',
@@ -21,9 +21,9 @@ const experiences = [
     location: 'Remote',
     period: '2024',
     highlights: [
-      'Trained and deployed custom Vision-Language Model for 911-inform alerting across schools and public venues',
+      'Trained real-time weapon detection models, integrated a Vision-Language Model for automated investigation on the detection knowledge base across schools and public venues',
       'Built complete smart-investigation pipeline: real-time threat detection, evidence capture, automated incident report generation',
-      'Architected full ML lifecycle platform: data processing and augmentation pipelines, dataset versioning, model training orchestration, model registry, CI/CD for deployment, automated rollback, and production drift monitoring',
+      'Built ML lifecycle infrastructure: data processing pipelines, model versioning, CI/CD deployment, and production monitoring across multi-tenant environments',
     ],
   },
   {
