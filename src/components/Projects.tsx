@@ -10,15 +10,15 @@ const projects = [
     challenge:
       'Build a production-grade system that detects vessels in high-resolution satellite imagery, computes geolocation coordinates and physical dimensions, and serves results through an operational dashboard — all within an air-gapped environment.',
     architecture:
-      'Satellite imagery → Tiled inference pipeline → Orientation-aware object detection → Rasterio geolocation engine → QGIS validation → FastAPI REST layer → ReactJS operational dashboard → PostgreSQL event store',
+      'Satellite imagery → Tiled inference pipeline → Orientation-aware object detection → Geolocation engine → Spatial validation → API layer → Operational dashboard → Event store',
     approach: [
       'Trained orientation-aware object detection models for rotated ship detection in overhead imagery across varied lighting and resolution conditions',
-      'Built automated geolocation pipeline using Rasterio + QGIS for coordinate extraction, vessel length measurement, and real-world dimension computation from pixel space',
-      'Architected FastAPI backend with ReactJS operational dashboard for real-time querying, filtering, and geospatial visualization',
-      'Containerized entire stack with Docker for air-gapped deployment across naval command infrastructure with no external dependencies',
+      'Built automated geolocation pipeline using geospatial libraries for coordinate extraction, vessel length measurement, and real-world dimension computation from pixel space',
+      'Architected API backend with operational dashboard for real-time querying, filtering, and geospatial visualization',
+      'Containerized entire stack for air-gapped deployment across naval command infrastructure with no external dependencies',
     ],
     outcome: 'Active across multiple naval commands. Reduces manual analysis time from hours to minutes for vessel identification and measurement tasks.',
-    tags: ['Object Detection', 'Oriented Bounding Boxes', 'Rasterio', 'QGIS', 'FastAPI', 'ReactJS', 'Docker', 'CUDA'],
+    tags: ['Object Detection', 'Oriented Bounding Boxes', 'Geospatial Analysis', 'API Design', 'Dashboard', 'Docker', 'GPU Acceleration'],
   },
   {
     title: 'Offline GenAI Platform (Classified)',
@@ -28,15 +28,15 @@ const projects = [
     challenge:
       'Deliver secure LLM capabilities — document Q&A, automated report generation, presentation creation — on a completely isolated network with no internet access, no cloud APIs, and no vendor dependencies.',
     architecture:
-      'Classified documents → OCR preprocessing → LangChain RAG pipeline (Chunking → ChromaDB embedding → Hybrid retrieval) → LLaMA inference via vLLM → Template engine → FastAPI → ReactJS operational interface',
+      'Classified documents → Preprocessing → RAG pipeline (Chunking → Vector embedding → Hybrid retrieval) → LLM inference via optimized engine → Template engine → API → Operational interface',
     approach: [
-      'Deployed open-weight LLaMA models with vLLM serving engine + continuous batching, achieving 40% lower memory footprint and 2.3x throughput vs baseline vLLM defaults',
-      'Built RAG pipeline with LangChain for retrieval orchestration, ChromaDB for vector storage, and hybrid search (dense + keyword) for improved retrieval accuracy on domain-specific terminology',
+      'Deployed open-weight LLMs with optimized inference engine and continuous batching, achieving 40% lower memory footprint and 2.3x throughput vs baseline defaults',
+      'Built RAG pipeline with retrieval orchestration, vector storage, and hybrid search (dense + keyword) for improved retrieval accuracy on domain-specific terminology',
       'Engineered automated report and presentation generator from institutional document templates, reducing analyst documentation turnaround by an estimated 60%',
-      'Designed FastAPI backend with ReactJS interface for operational use by non-technical personnel',
+      'Designed API backend with web interface for operational use by non-technical personnel',
     ],
     outcome: '~60% reduction in analyst documentation turnaround. Zero external vendor dependency — fully sovereign AI capability on classified networks.',
-    tags: ['LLaMA', 'LangChain', 'vLLM', 'ChromaDB', 'FastAPI', 'ReactJS', 'Docker', 'CUDA', 'Air-Gapped'],
+    tags: ['LLM Deployment', 'RAG', 'Vector Databases', 'API Design', 'Web Interface', 'Docker', 'GPU Acceleration', 'Air-Gapped'],
   },
   {
     title: 'Real-Time Multi-Camera Surveillance Engine',
@@ -44,17 +44,17 @@ const projects = [
     summary:
       'Real-time surveillance analytics engine with multi-object tracking, trajectory prediction, and behavioral pattern detection on edge devices.',
     challenge:
-      'Build a system that processes multiple simultaneous video feeds for vessel and human motion detection, generates event-level metadata (timestamp, duration, type), and runs on NVIDIA Jetson edge devices with strict latency requirements.',
+      'Build a system that processes multiple simultaneous video feeds for vessel and human motion detection, generates event-level metadata (timestamp, duration, type), and runs on edge devices with strict latency requirements.',
     architecture:
-      'Multi-camera RTSP feeds → NVIDIA DeepStream pipeline → TensorRT-accelerated YOLO inference → Multi-object tracker (BoT-SORT) → Trajectory estimator → Behavioral classifier → Metadata logger → Clip stitcher → FastAPI event API → PostgreSQL timeseries',
+      'Multi-camera feeds → Hardware-accelerated video pipeline → Optimized detection inference → Multi-object tracker → Trajectory estimator → Behavioral classifier → Metadata logger → Clip stitcher → Event API → Timeseries store',
     approach: [
-      'Architected DeepStream pipeline on NVIDIA Jetson AGX Orin + CUDA Linux servers for multi-stream inference across 8+ simultaneous camera feeds',
-      'Applied TensorRT INT8 quantization with tiled inference, achieving sub-50ms p99 end-to-end latency per frame',
-      'Integrated BoT-SORT multi-object tracker with trajectory prediction and rule-based behavioral pattern classification',
+      'Architected hardware-accelerated video pipeline on edge devices for multi-stream inference across 8+ simultaneous camera feeds',
+      'Applied model quantization with tiled inference, achieving sub-50ms p99 end-to-end latency per frame',
+      'Integrated multi-object tracker with trajectory prediction and rule-based behavioral pattern classification',
       'Built automatic clip stitching with event-aligned metadata (timestamp, duration, object class, trajectory) for post-mission forensic review',
     ],
-    outcome: 'Sub-50ms p99 inference latency on Jetson edge hardware. Production deployment on naval surveillance vessels. Replaces manual footage review with automated event logging.',
-    tags: ['TensorRT', 'DeepStream', 'NVIDIA Jetson', 'CUDA', 'YOLO', 'BoT-SORT', 'Multi-Object Tracking', 'Docker'],
+    outcome: 'Sub-50ms p99 inference latency on edge hardware. Production deployment on naval surveillance vessels. Replaces manual footage review with automated event logging.',
+    tags: ['Video Analytics', 'Multi-Object Tracking', 'Edge Deployment', 'Model Quantization', 'GPU Acceleration', 'Docker', 'Real-Time Systems'],
   },
   {
     title: 'Self-Hosted Agentic Coding Assistant',
@@ -64,15 +64,15 @@ const projects = [
     challenge:
       'Create a secure coding assistant that can generate code, write tests, and produce documentation — without sending any proprietary code to external APIs — while maintaining context across multi-file codebases.',
     architecture:
-      'Self-hosted LLaMA 70B → vLLM serving with continuous batching → Agent framework (LangGraph) with tool definitions → Code sandbox for execution validation → GitLab MR integration → Feedback loop via human review',
+      'Self-hosted LLMs → Optimized inference serving → Agent orchestration framework with tool definitions → Code sandbox for execution validation → Version control integration → Feedback loop via human review',
     approach: [
-      'Deployed LLaMA-70B on private GPU infrastructure with vLLM serving and PagedAttention for efficient memory management',
-      'Built agentic workflow using LangGraph: plan → generate → validate → iterate loop with tools for file read/write, git operations, and test execution in isolated sandbox',
+      'Deployed large open-weight LLMs on private GPU infrastructure with optimized inference serving and efficient memory management',
+      'Built agentic workflow using orchestration framework: plan → generate → validate → iterate loop with tools for file read/write, version control operations, and test execution in isolated sandbox',
       'Designed multi-turn context management to handle repository-level understanding across files — not just single-file completions',
-      'Integrated into the lab\'s existing GitLab workflow via merge request comments, enabling engineers to trigger code generation from issue descriptions',
+      'Integrated into the lab\'s existing version control workflow via merge request comments, enabling engineers to trigger code generation from issue descriptions',
     ],
     outcome: 'Reduced boilerplate and test scaffolding authoring time by ~40% across the lab\'s engineering team. Particularly effective for data processing scripts and API endpoint generation.',
-    tags: ['LLaMA 70B', 'vLLM', 'LangGraph', 'Agentic AI', 'Air-Gapped', 'GitLab', 'CUDA'],
+    tags: ['LLM Deployment', 'Agentic AI', 'Code Generation', 'Air-Gapped', 'Version Control Integration', 'GPU Inference'],
   },
   {
     title: 'Vision-Language Model for Public Safety',
@@ -82,7 +82,7 @@ const projects = [
     challenge:
       'Build a complete smart-investigation pipeline that detects threats in real-time, captures forensic evidence, and generates incident reports — reducing manual investigation time from minutes to seconds.',
     approach: [
-      'Trained real-time weapon detection models (YOLO-based) optimized for surveillance camera perspectives with varied lighting and occlusion',
+      'Trained real-time weapon detection models optimized for surveillance camera perspectives with varied lighting and occlusion',
       'Integrated a Vision-Language Model that performs automated reasoning on the detection knowledge base — not raw video, but structured detection events with temporal context',
       'VLM deployment processed thousands of frames per hour across multiple camera feeds, generating structured knowledge base entries for each detection event',
       'Architected full ML lifecycle platform: data processing and augmentation pipelines, dataset versioning, model training orchestration, model registry, CI/CD for deployment, automated rollback, and production drift monitoring',

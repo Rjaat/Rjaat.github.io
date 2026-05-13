@@ -7,12 +7,12 @@ const experiences = [
     location: 'New Delhi',
     period: 'Jul 2023 — Present',
     highlights: [
-      'Designed end-to-end satellite imagery analytics platform for maritime warship detection — orientation-aware detection models, Rasterio geolocation, FastAPI backend, ReactJS dashboard; deployed across multiple naval commands',
-      'Architected classified offline GenAI platform on air-gapped private cloud: RAG system (LangChain, vLLM, ChromaDB), automated report/presentation generator; reduced analyst documentation turnaround by ~60%',
-      'Engineered real-time multi-camera surveillance with sub-50ms latency via TensorRT INT8 quantization and DeepStream on NVIDIA Jetson',
+      'Designed end-to-end satellite imagery analytics platform for maritime warship detection — orientation-aware detection models, geospatial analysis, API backend, operational dashboard; deployed across multiple naval commands',
+      'Architected classified offline GenAI platform on air-gapped private cloud: RAG system with optimized inference, automated report/presentation generator; reduced analyst documentation turnaround by ~60%',
+      'Engineered real-time multi-camera surveillance with sub-50ms latency via model quantization and hardware-accelerated pipelines on edge devices',
       'Built multimodal document intelligence system combining open-weight LLMs with neural TTS for podcast-style audio briefs',
       'Designed and deployed agentic coding assistant on self-hosted LLMs; reduced boilerplate authoring time by ~40% across engineering team',
-      'Sole engineer responsible for building lab\'s complete AI/ML infrastructure from zero: GPU cluster, GitLab, Jira, SMTP, SeaweedFS distributed storage, all on fully air-gapped systems',
+      'Sole engineer responsible for building lab\'s complete AI/ML infrastructure from zero: GPU cluster, version control, project management, SMTP, distributed storage, all on fully air-gapped systems',
     ],
   },
   {

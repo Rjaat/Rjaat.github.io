@@ -4,8 +4,8 @@ const categories = [
   {
     title: 'Computer Vision & Perception',
     skills: [
-      'Multi-stage object detection and tracking (OBB, DeepStream pipelines, pose/motion estimation)',
-      'Geospatial and satellite imagery analysis — Rasterio, QGIS, tiled inference, coordinate extraction',
+      'Multi-stage object detection and tracking (OBB, hardware-accelerated pipelines, pose/motion estimation)',
+      'Geospatial and satellite imagery analysis — geospatial libraries, tiled inference, coordinate extraction',
       'Real-time video analytics: multi-stream processing, trajectory prediction, behavioral pattern detection',
       'Model training, fine-tuning, and deployment for vision tasks at the edge',
     ],
@@ -13,7 +13,7 @@ const categories = [
   {
     title: 'LLM & GenAI Systems',
     skills: [
-      'Open-weight LLM deployment and serving with optimized inference engines (vLLM, SGLang, TensorRT-LLM)',
+      'Open-weight LLM deployment and serving with optimized inference engines',
       'RAG pipeline architecture: retrieval orchestration, vector databases, hybrid search, re-ranking',
       'Agentic workflows: tool-use, code generation, multi-step reasoning with self-hosted models',
       'Multimodal systems: vision-language models, neural TTS, document intelligence pipelines',
@@ -22,8 +22,8 @@ const categories = [
   {
     title: 'Inference Engineering',
     skills: [
-      'GPU inference optimization: CUDA, TensorRT, kernel fusion, quantization, tiled inference',
-      'Edge deployment on NVIDIA Jetson with hardware-accelerated pipelines',
+      'GPU inference optimization: GPU acceleration frameworks, kernel fusion, quantization, tiled inference',
+      'Edge deployment with hardware-accelerated pipelines',
       'Cross-platform inference strategy: target-dependent optimization for NVIDIA, Apple Silicon, and CPU backends',
       'End-to-end latency budgeting, throughput benchmarking, memory footprint optimization',
     ],
@@ -31,7 +31,7 @@ const categories = [
   {
     title: 'Backend & Infrastructure',
     skills: [
-      'API design and microservices: FastAPI, Flask, RESTful architectures, containerized with Docker',
+      'API design and microservices: Python-based frameworks, RESTful architectures, containerized deployment',
       'Air-gapped and private-cloud infrastructure: full system design from bare metal to deployed service',
       'Cloud platforms: AWS (EC2, S3), Azure — provisioning, networking, IAM, cost optimization',
       'Full-stack infrastructure ownership: GPU cluster provisioning, distributed storage, self-hosted CI/CD and project management, all on air-gapped networks',
@@ -41,8 +41,8 @@ const categories = [
     title: 'Data & Frontend',
     skills: [
       'Relational and document databases: PostgreSQL, MySQL, MongoDB — schema design, query optimization',
-      'Vector databases for production RAG: ChromaDB, FAISS — indexing strategies, hybrid search, re-ranking',
-      'Operational dashboards and interfaces: ReactJS, Streamlit — real-time data visualization, map integration',
+      'Vector databases for production RAG: indexing strategies, hybrid search, re-ranking',
+      'Operational dashboards and interfaces: real-time data visualization, map integration',
       'Python, C++, TypeScript, SQL — I use whatever the system needs',
     ],
   },
