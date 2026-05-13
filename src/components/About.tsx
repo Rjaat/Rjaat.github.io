@@ -13,7 +13,7 @@ const About = () => {
         >
           <p className="section-label mb-4">About</p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-            Engineering Philosophy
+            About
           </h2>
         </motion.div>
 
@@ -39,7 +39,6 @@ const About = () => {
               and project management, distributed storage, internal networking — all
               on systems with no internet access and no vendor dependencies.
             </p>
-
           </motion.div>
 
           <motion.div
@@ -61,14 +60,6 @@ const About = () => {
                   <p className="text-xs text-muted">Rajasthan Technical University · 2017–2021</p>
                 </div>
               </div>
-            </div>
-
-            <div>
-              <h3 className="text-sm font-semibold text-white mb-4">Certifications</h3>
-              <ul className="space-y-1 text-sm text-muted">
-                <li>AWS Fundamentals — Coursera</li>
-                <li>Developing Cloud Native Applications — Coursera</li>
-              </ul>
             </div>
 
             <div>

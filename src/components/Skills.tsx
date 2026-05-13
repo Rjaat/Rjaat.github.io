@@ -43,7 +43,7 @@ const categories = [
       'Relational and document databases: PostgreSQL, MySQL, MongoDB — schema design, query optimization',
       'Vector databases for production RAG: ChromaDB, FAISS — indexing strategies, hybrid search, re-ranking',
       'Operational dashboards and interfaces: ReactJS, Streamlit — real-time data visualization, map integration',
-      'Polyglot engineering: Python, C++, TypeScript, SQL — whatever the system demands',
+      'Python, C++, TypeScript, SQL — I use whatever the system needs',
     ],
   },
   {
@@ -80,7 +80,7 @@ const Skills = () => {
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="mb-20"
         >
-          <p className="section-label mb-4">Capabilities</p>
+          <p className="section-label mb-4">Skills</p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Technical Competencies
           </h2>
