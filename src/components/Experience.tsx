@@ -89,7 +89,8 @@ const Experience = () => {
           viewport={{ once: true, margin: '-80px' }}
         >
           {experiences.map((exp, i) => (
-            <motion.div key={`${exp.role}-${exp.period}`} variants={expItem} className="gradient-border-mask rounded-lg p-4 -mx-4">
+            <article key={`${exp.role}-${exp.period}`}>
+            <motion.div variants={expItem} className="rounded-lg p-4 -mx-4">
               <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8 mb-6">
                 <div className="md:col-span-3">
                   <h3 className="text-lg font-semibold text-white">{exp.role}</h3>
@@ -114,6 +115,7 @@ const Experience = () => {
               </ul>
               {i < experiences.length - 1 && <div className="h-px bg-border mt-16" />}
             </motion.div>
+            </article>
           ))}
         </motion.div>
       </div>

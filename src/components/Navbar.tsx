@@ -42,6 +42,7 @@ const Navbar = () => {
 
   return (
     <nav
+      aria-label="Primary navigation"
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
         scrolled
           ? 'bg-surface/80 backdrop-blur-xl border-b border-border shadow-lg shadow-black/5'

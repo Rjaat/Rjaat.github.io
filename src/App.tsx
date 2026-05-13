@@ -9,19 +9,19 @@ import Contact from './components/Contact'
 function App() {
   return (
     <div className="relative min-h-screen bg-surface">
-      <div className="fixed inset-0 -z-10 cyber-grid opacity-30 pointer-events-none" />
+      <div className="noise" />
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-white focus:text-surface focus:rounded-lg focus:text-sm focus:font-medium">
+        Skip to main content
+      </a>
       <Navbar />
-      <Hero />
-      <div className="section-divider" />
-      <Projects />
-      <div className="section-divider" />
-      <Experience />
-      <div className="section-divider" />
-      <Skills />
-      <div className="section-divider" />
-      <About />
-      <div className="section-divider" />
-      <Contact />
+      <main id="main-content">
+        <Hero />
+        <Projects />
+        <Experience />
+        <Skills />
+        <About />
+        <Contact />
+      </main>
     </div>
   )
 }

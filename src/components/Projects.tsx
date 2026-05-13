@@ -111,12 +111,13 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
   const { tilt, handleMouse, resetTilt } = useTilt()
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-    >
+    <article>
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+      >
       <div
         className="group"
         onMouseMove={handleMouse}
@@ -205,6 +206,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
         </div>
       </div>
     </motion.div>
+    </article>
   )
 }
 

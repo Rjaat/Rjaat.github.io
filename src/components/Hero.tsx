@@ -30,9 +30,9 @@ const Hero = () => {
 
           <motion.h1
             variants={item}
-            className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1]"
+            className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1] text-white"
           >
-            <span className="gradient-text">Rajesh K. Jat</span>
+            Rajesh K. Jat
           </motion.h1>
 
           <motion.p
@@ -72,6 +72,8 @@ const Hero = () => {
                 href={href}
                 className="text-muted hover:text-white transition-colors"
                 aria-label={label}
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <Icon size={20} />
               </a>
