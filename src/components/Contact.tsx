@@ -4,7 +4,7 @@ const links = [
   { icon: Mail, href: 'mailto:rajgadhwal99@gmail.com', label: 'rajgadhwal99@gmail.com' },
   { icon: Github, href: 'https://github.com/Rjaat', label: 'github.com/Rjaat' },
   { icon: Linkedin, href: 'https://linkedin.com/in/rajesh-choudharyy', label: 'linkedin.com/in/rajesh-choudharyy' },
-  { icon: MapPin, href: 'https://maps.google.com/?q=New+Delhi+India', label: 'New Delhi, India' },
+  { icon: MapPin, href: '#', label: 'New Delhi, India' },
   { icon: FileText, href: '/Rajesh_Jat_Resume.pdf', label: 'Resume (PDF)' },
 ]
 
@@ -14,7 +14,7 @@ const Contact = () => {
       <div className="max-w-5xl mx-auto px-6">
         <div className="mb-20">
           <p className="section-label mb-4">Contact</p>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-4 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-white">
             Get in Touch
           </h2>
           <p className="text-muted max-w-2xl">

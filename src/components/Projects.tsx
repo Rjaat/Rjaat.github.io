@@ -1,3 +1,4 @@
+import { useState, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import PipelineFlow from './ui/PipelineFlow'
 
@@ -94,90 +95,115 @@ const projects = [
   },
 ]
 
+function useTilt() {
+  const [tilt, setTilt] = useState({ x: 0, y: 0 })
+  const handleMouse = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    const x = (e.clientX - rect.left) / rect.width - 0.5
+    const y = (e.clientY - rect.top) / rect.height - 0.5
+    setTilt({ x: y * -8, y: x * 8 })
+  }, [])
+  const resetTilt = useCallback(() => setTilt({ x: 0, y: 0 }), [])
+  return { tilt, handleMouse, resetTilt }
+}
+
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
+  const { tilt, handleMouse, resetTilt } = useTilt()
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-      className="rounded-xl bg-surface-50 border border-border p-6 md:p-8"
     >
-      <div className="mb-5">
-        <p className="text-xs text-accent font-mono">0{index + 1}</p>
-      </div>
+      <div
+        className="group"
+        onMouseMove={handleMouse}
+        onMouseLeave={resetTilt}
+        style={{ perspective: '1000px' }}
+      >
+        <div
+          className="transition-transform duration-200 ease-out"
+          style={{ transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)` }}
+        >
+          <div className="mb-4">
+            <p className="text-xs text-accent font-mono">0{index + 1}</p>
+          </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16">
-        <div className="lg:col-span-3">
-          <h3 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2 text-white">
-            {project.title}
-          </h3>
-          <p className="text-sm text-accent font-mono mb-6">{project.role}</p>
-          <p className="text-muted leading-relaxed mb-8">{project.summary}</p>
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16">
+            <div className="lg:col-span-3">
+              <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-2 text-white">
+                {project.title}
+              </h3>
+              <p className="text-sm text-accent font-mono mb-6">{project.role}</p>
+              <p className="text-muted leading-relaxed mb-8">{project.summary}</p>
 
-          <div className="space-y-6">
-            <div>
-              <h4 className="text-xs font-mono text-white/40 uppercase tracking-wider mb-3">
-                Challenge
-              </h4>
-              <p className="text-sm text-muted leading-relaxed">
-                {project.challenge}
-              </p>
-            </div>
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-xs font-mono text-white/40 uppercase tracking-wider mb-3">
+                    Challenge
+                  </h4>
+                  <p className="text-sm text-muted leading-relaxed">
+                    {project.challenge}
+                  </p>
+                </div>
 
-            {project.architecture && (
-              <div>
-                <h4 className="text-xs font-mono text-white/40 uppercase tracking-wider mb-3">
-                  Pipeline
-                </h4>
-                <PipelineFlow steps={project.architecture} />
+                {project.architecture && (
+                  <div>
+                    <h4 className="text-xs font-mono text-white/40 uppercase tracking-wider mb-3">
+                      Pipeline
+                    </h4>
+                    <PipelineFlow steps={project.architecture} />
+                  </div>
+                )}
+
+                <div>
+                  <h4 className="text-xs font-mono text-white/40 uppercase tracking-wider mb-3">
+                    Approach
+                  </h4>
+                  <ul className="space-y-2">
+                    {project.approach.map((step, j) => (
+                      <li key={j} className="text-sm text-muted flex items-start gap-3">
+                        <span className="text-accent mt-1.5 shrink-0">
+                          <svg width="6" height="6" viewBox="0 0 6 6" fill="currentColor">
+                            <circle cx="3" cy="3" r="3" />
+                          </svg>
+                        </span>
+                        {step}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="text-xs font-mono text-white/40 uppercase tracking-wider mb-3">
+                    Outcome
+                  </h4>
+                  <p className="text-sm text-white/80 font-medium">{project.outcome}</p>
+                </div>
               </div>
-            )}
+            </div>
 
-            <div>
-              <h4 className="text-xs font-mono text-white/40 uppercase tracking-wider mb-3">
-                Approach
-              </h4>
-              <ul className="space-y-2">
-                {project.approach.map((step, j) => (
-                  <li key={j} className="text-sm text-muted flex items-start gap-3">
-                    <span className="text-accent mt-1.5 shrink-0">
-                      <svg width="6" height="6" viewBox="0 0 6 6" fill="currentColor">
-                        <circle cx="3" cy="3" r="3" />
-                      </svg>
-                    </span>
-                    {step}
-                  </li>
+            <div className="lg:col-span-2 lg:pt-12">
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs text-muted border border-border px-3 py-1.5 rounded-md"
+                  >
+                    {tag}
+                  </span>
                 ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-xs font-mono text-white/40 uppercase tracking-wider mb-3">
-                Outcome
-              </h4>
-              <p className="text-sm text-white/80 font-medium">{project.outcome}</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="lg:col-span-2 lg:pt-12">
-          <div className="flex flex-wrap gap-2">
-            {project.tags.map((tag) => (
-              <span
-                key={tag}
-                className="text-xs text-muted border border-border px-3 py-1.5 rounded-md"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
+          {index < projects.length - 1 && (
+            <div className="h-px bg-border mt-24" />
+          )}
         </div>
       </div>
-
-      {index < projects.length - 1 && (
-        <div className="h-px bg-border/50 mt-8" />
-      )}
     </motion.div>
   )
 }
@@ -186,18 +212,24 @@ const Projects = () => {
   return (
     <section id="projects" className="py-32">
       <div className="max-w-5xl mx-auto px-6">
-        <div className="mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-20"
+        >
           <p className="section-label mb-4">Projects</p>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-4 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Engineering Case Studies
           </h2>
           <p className="text-muted max-w-2xl">
             Five production systems shipped in defense, public safety, and enterprise environments.
             I owned every layer — from model architecture to operational dashboard.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="space-y-10">
+        <div className="space-y-24">
           {projects.map((project, i) => (
             <ProjectCard key={project.title} project={project} index={i} />
           ))}

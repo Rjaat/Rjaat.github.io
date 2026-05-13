@@ -56,25 +56,27 @@ const Navbar = () => {
           Rajesh K. Jat
         </a>
 
+        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className={`relative text-sm transition-colors py-1 ${
+              className={`relative text-sm transition-colors ${
                 active === item.href.slice(1)
-                  ? 'text-white font-medium'
+                  ? 'text-white'
                   : 'text-muted hover:text-white'
               }`}
             >
               {item.name}
               {active === item.href.slice(1) && (
-                <span className="absolute -bottom-0.5 left-0 right-0 h-0.5 rounded-full bg-accent" />
+                <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent" />
               )}
             </a>
           ))}
         </div>
 
+        {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden p-2 text-muted hover:text-white transition-colors"
@@ -84,6 +86,7 @@ const Navbar = () => {
         </button>
       </div>
 
+      {/* Mobile menu */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           mobileOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
@@ -97,7 +100,7 @@ const Navbar = () => {
               onClick={() => setMobileOpen(false)}
               className={`block py-2.5 text-sm transition-colors ${
                 active === item.href.slice(1)
-                  ? 'text-white font-medium'
+                  ? 'text-white'
                   : 'text-muted hover:text-white'
               }`}
             >

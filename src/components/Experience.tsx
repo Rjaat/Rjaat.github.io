@@ -8,8 +8,11 @@ const experiences = [
     period: 'Jul 2023 — Present',
     highlights: [
       'Designed end-to-end satellite imagery analytics platform for maritime warship detection: orientation-aware detection models, geospatial analysis, API backend, operational dashboard — deployed across multiple naval commands',
-      'Architected classified offline GenAI platform on air-gapped private cloud: RAG system with optimized inference — reduced analyst documentation turnaround by ~60%',
+      'Architected classified offline GenAI platform on air-gapped private cloud: RAG system with optimized inference, automated report and presentation generator — reduced analyst documentation turnaround by ~60%',
       'Engineered real-time multi-camera surveillance with sub-50ms latency via model quantization and hardware-accelerated pipelines on edge devices',
+      'Built multimodal document intelligence system combining open-weight LLMs with neural TTS for podcast-style audio briefs',
+      'Designed and deployed agentic coding assistant on self-hosted LLMs; reduced boilerplate authoring time by ~40% across engineering team',
+      'Sole engineer responsible for building lab\'s complete AI/ML infrastructure from zero: GPU cluster, version control, project management, SMTP, distributed storage, all on fully air-gapped systems',
     ],
   },
   {
@@ -18,9 +21,9 @@ const experiences = [
     location: 'Remote',
     period: '2024',
     highlights: [
-      'Trained real-time weapon detection models, integrated VLM for automated investigation on detection knowledge base across schools and public venues',
-      'Built complete smart-investigation pipeline: real-time threat detection, evidence capture, automated incident report generation — alert-to-report in under 15 seconds',
-      'Built ML lifecycle infrastructure: data processing pipelines, model versioning, CI/CD deployment, production drift monitoring across multi-tenant environments',
+      'Trained real-time weapon detection models, integrated a Vision-Language Model for automated investigation on the detection knowledge base across schools and public venues',
+      'Built complete smart-investigation pipeline: real-time threat detection, evidence capture, automated incident report generation',
+      'Built ML lifecycle infrastructure: data processing pipelines, model versioning, CI/CD deployment, and production monitoring across multi-tenant environments',
     ],
   },
   {
@@ -31,6 +34,16 @@ const experiences = [
     highlights: [
       'Trained multi-stage logo detection system for brand placement analysis on live sports broadcast footage',
       'Delivered automated analytics: frame-level visibility duration, on-screen position heatmaps, sponsor ROI scoring at broadcast frame rates',
+    ],
+  },
+  {
+    role: 'AI Engineering Intern',
+    company: 'Object Automation System Solutions',
+    location: 'Chennai',
+    period: 'Sep 2022 — Jan 2023',
+    highlights: [
+      'Built Flask-based collaborative filtering recommendation engine',
+      'Administered Linux VPS-hosted LMS maintaining 24/7 uptime',
     ],
   },
 ]
@@ -51,16 +64,22 @@ const Experience = () => {
   return (
     <section id="experience" className="py-32">
       <div className="max-w-5xl mx-auto px-6">
-        <div className="mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-20"
+        >
           <p className="section-label mb-4">Experience</p>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-4 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Professional History
           </h2>
           <p className="text-muted max-w-2xl">
             Building production AI systems for defense, public safety, and enterprise — from
             zero infrastructure to deployed platform.
           </p>
-        </div>
+        </motion.div>
 
         <motion.div
           className="space-y-16"
@@ -70,10 +89,10 @@ const Experience = () => {
           viewport={{ once: true, margin: '-80px' }}
         >
           {experiences.map((exp, i) => (
-            <motion.div key={`${exp.role}-${exp.period}`} variants={expItem}>
+            <motion.div key={`${exp.role}-${exp.period}`} variants={expItem} className="rounded-lg p-4 -mx-4">
               <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8 mb-6">
                 <div className="md:col-span-3">
-                  <h3 className="text-lg font-medium text-white">{exp.role}</h3>
+                  <h3 className="text-lg font-semibold text-white">{exp.role}</h3>
                   <p className="text-sm text-accent">{exp.company}</p>
                 </div>
                 <div className="md:col-span-2 md:text-right">
