@@ -1,62 +1,56 @@
 const categories = [
   {
-    title: 'ML Systems',
+    title: 'Computer Vision & Perception',
     skills: [
-      'Object Detection & Tracking (OBB, multi-stage)',
-      'Pose & Motion Estimation',
-      'Model Training & Fine-Tuning',
-      'Geospatial & Satellite Imagery Analysis',
-      'OpenCV, FFmpeg, Rasterio, QGIS',
+      'Multi-stage object detection and tracking (OBB, DeepStream pipelines, pose/motion estimation)',
+      'Geospatial and satellite imagery analysis — Rasterio, QGIS, tiled inference, coordinate extraction',
+      'Real-time video analytics: multi-stream processing, trajectory prediction, behavioral pattern detection',
+      'Model training, fine-tuning, and deployment for vision tasks at the edge',
     ],
   },
   {
-    title: 'GenAI & LLM Infrastructure',
+    title: 'LLM & GenAI Systems',
     skills: [
-      'Open-Weight LLMs (LLaMA, Mistral)',
-      'RAG System Design (LangChain, LlamaIndex, ChromaDB)',
-      'Agentic Workflows & Prompt Engineering',
-      'vLLM Serving & Optimization',
-      'Neural TTS & Multimodal Systems',
+      'Open-weight LLM deployment (LLaMA, Mistral) with vLLM serving and continuous batching',
+      'RAG pipeline architecture: LangChain/LlamaIndex orchestration, ChromaDB/FAISS vector stores, hybrid search',
+      'Agentic workflows: tool-use, code generation, multi-step reasoning with self-hosted models',
+      'Multimodal systems: vision-language models, neural TTS, document intelligence pipelines',
     ],
   },
   {
-    title: 'GPU & Inference',
+    title: 'Inference Engineering',
     skills: [
-      'NVIDIA CUDA, TensorRT (INT8/FP16)',
-      'DeepStream SDK',
-      'NVIDIA Jetson Edge Deployment',
-      'Quantization, Tiled Inference, Low-Latency Serving',
-      'Inference Benchmarking & Optimization',
+      'GPU inference optimization: NVIDIA CUDA, TensorRT (INT8/FP16), kernel fusion, tiled inference',
+      'Edge deployment on NVIDIA Jetson with DeepStream SDK and hardware-accelerated pipelines',
+      'Cross-platform inference strategy: CUDA for NVIDIA, MLX for Apple Silicon, ONNX for portability',
+      'End-to-end latency budgeting, throughput benchmarking, memory footprint optimization',
     ],
   },
   {
     title: 'Backend & Infrastructure',
     skills: [
-      'FastAPI, Flask, REST APIs',
-      'Docker, Microservices Architecture',
-      'Air-Gapped & Private-Cloud Deployments',
-      'AWS (EC2, S3), Azure',
-      'Linux Administration, Self-Hosted GitLab, Jira',
-      'SeaweedFS Distributed Storage',
+      'API design and microservices: FastAPI, Flask, RESTful architectures, containerized with Docker',
+      'Air-gapped and private-cloud infrastructure: full system design from bare metal to deployed service',
+      'Cloud platforms: AWS (EC2, S3), Azure — provisioning, networking, IAM, cost optimization',
+      'Linux system administration, GPU cluster provisioning, self-hosted GitLab/Jira, distributed storage (SeaweedFS)',
     ],
   },
   {
-    title: 'Frontend & Data',
+    title: 'Data & Frontend',
     skills: [
-      'ReactJS, Streamlit, JavaScript',
-      'PostgreSQL, MySQL, MongoDB',
-      'Vector Databases (ChromaDB, FAISS)',
-      'Python, C++, R',
+      'Relational and document databases: PostgreSQL, MySQL, MongoDB — schema design, query optimization',
+      'Vector databases for production RAG: ChromaDB, FAISS — indexing strategies, hybrid search, re-ranking',
+      'Operational dashboards and interfaces: ReactJS, Streamlit — real-time data visualization, map integration',
+      'Languages: Python (primary), C++, JavaScript/TypeScript, SQL, R',
     ],
   },
   {
-    title: 'Specialized Systems',
+    title: 'Domain-Deployed Systems',
     skills: [
-      'Maritime Surveillance Analytics',
-      'Defense-Grade Secure Deployments',
-      'Satellite Image Processing Pipelines',
-      'Real-Time Video Analytics at Edge',
-      'Internal PKI & Mail Infrastructure',
+      'Maritime surveillance and vessel detection: radar-optical fusion, AIS integration, geofencing',
+      'Defense-grade deployments: air-gapped architecture, DISA STIG hardening, zero-trust networking',
+      'Satellite image processing pipelines: orthorectification, pan-sharpening, change detection',
+      'Internal PKI, SMTP infrastructure, and secure enclave design for classified environments',
     ],
   },
 ]
@@ -66,13 +60,13 @@ const Skills = () => {
     <section id="skills" className="py-32">
       <div className="max-w-5xl mx-auto px-6">
         <div className="mb-20">
-          <p className="section-label mb-4">Skills</p>
+          <p className="section-label mb-4">Capabilities</p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Technical Competencies
           </h2>
           <p className="text-muted max-w-2xl">
-            Full-stack AI engineering — from model training and quantized edge deployment to 
-            air-gapped infrastructure and operational dashboards.
+            Deep expertise across the AI systems stack — model development, production inference,
+            infrastructure, and domain-specific deployment. I own the architecture, not just the implementation.
           </p>
         </div>
 
