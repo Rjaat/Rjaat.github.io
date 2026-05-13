@@ -32,7 +32,7 @@ const categories = [
       'API design and microservices: FastAPI, Flask, RESTful architectures, containerized with Docker',
       'Air-gapped and private-cloud infrastructure: full system design from bare metal to deployed service',
       'Cloud platforms: AWS (EC2, S3), Azure — provisioning, networking, IAM, cost optimization',
-      'Linux system administration, GPU cluster provisioning, self-hosted GitLab/Jira, distributed storage (SeaweedFS)',
+      'Full-stack infrastructure ownership: GPU cluster provisioning, distributed storage, self-hosted CI/CD and project management, all on air-gapped networks',
     ],
   },
   {
@@ -41,7 +41,7 @@ const categories = [
       'Relational and document databases: PostgreSQL, MySQL, MongoDB — schema design, query optimization',
       'Vector databases for production RAG: ChromaDB, FAISS — indexing strategies, hybrid search, re-ranking',
       'Operational dashboards and interfaces: ReactJS, Streamlit — real-time data visualization, map integration',
-      'Languages: Python (primary), C++, JavaScript/TypeScript, SQL, R',
+      'Polyglot engineering: Python, C++, TypeScript, SQL — whatever the system demands',
     ],
   },
   {
