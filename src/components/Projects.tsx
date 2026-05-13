@@ -28,7 +28,7 @@ const projects = [
     challenge:
       'Deliver secure LLM capabilities — document Q&A, automated report generation, presentation creation — on a completely isolated network with no internet access, no cloud APIs, and no vendor dependencies.',
     architecture:
-      'Classified documents → OCR preprocessing → LangChain RAG pipeline (Chunking → ChromaDB embedding → Hybrid retrieval) → LLaMA inference via vLLM → Template engine → FastAPI → ReactJS + Streamlit interfaces',
+      'Classified documents → OCR preprocessing → LangChain RAG pipeline (Chunking → ChromaDB embedding → Hybrid retrieval) → LLaMA inference via vLLM → Template engine → FastAPI → ReactJS operational interface',
     approach: [
       'Deployed open-weight LLaMA models with vLLM serving engine + continuous batching, achieving 40% lower memory footprint and 2.3x throughput vs baseline vLLM defaults',
       'Built RAG pipeline with LangChain for retrieval orchestration, ChromaDB for vector storage, and hybrid search (dense + keyword) for improved retrieval accuracy on domain-specific terminology',
