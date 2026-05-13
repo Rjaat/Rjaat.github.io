@@ -69,16 +69,17 @@ const projects = [
     title: 'Vision-Language Model for Public Safety',
     role: 'AI Systems Engineer (Contract) · Safespace Global',
     summary:
-      'Custom VLM for 911-inform alerting system covering real-time threat detection, evidence capture, and automated incident reporting across schools and public venues.',
+      'VLM-powered 911-inform alerting system covering real-time weapon detection, evidence capture, and automated incident reporting across schools and public venues.',
     challenge:
       'Build a complete smart-investigation pipeline that detects threats in real-time, captures forensic evidence, and generates incident reports — reducing manual investigation time from minutes to seconds.',
     approach: [
-      'Trained and deployed custom Vision-Language Model for scene understanding and threat classification',
-      'Built end-to-end pipeline: real-time detection → evidence capture → automated incident report generation',
+      'Trained real-time weapon detection models, integrated a Vision-Language Model for automated investigation on the detected knowledge base',
+      'VLM deployment handled high-throughput inferencing across thousands of frames per hour from multiple cameras simultaneously',
+      'Smart investigation performed on the structured knowledge base created by VLM inferencing — enabling contextual incident analysis and automated report generation',
       'Architected full ML lifecycle platform: data processing and augmentation pipelines, dataset versioning, model training orchestration, model registry, CI/CD for deployment, automated rollback, and production drift monitoring',
     ],
     outcome: 'Alert-to-report latency reduced from minutes to under 15 seconds. Zero-downtime model updates across multi-tenant environments.',
-    tags: ['VLM', 'MLOps', 'CI/CD', 'Docker', 'Real-Time Inference', 'Drift Monitoring'],
+    tags: ['VLM', 'Weapon Detection', 'Real-Time Inference', 'MLOps', 'CI/CD', 'Docker', 'Drift Monitoring'],
   },
   {
     title: 'Sponsor Analytics for Broadcast Sports',
