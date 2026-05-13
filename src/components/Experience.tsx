@@ -30,7 +30,7 @@ const experiences = [
     role: 'Computer Vision Engineer (Contract)',
     company: 'Sponsorlytics',
     location: 'Remote',
-    period: '2023 — 2024',
+    period: 'Nov 2024 — Mar 2025',
     highlights: [
       'Trained multi-stage logo detection system for brand placement analysis on live sports broadcast footage',
       'Delivered automated analytics: frame-level visibility duration, on-screen position heatmaps, sponsor ROI scoring at broadcast frame rates',
