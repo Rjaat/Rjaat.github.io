@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react'
 import { motion } from 'framer-motion'
+import PipelineFlow from './ui/PipelineFlow'
 
 const projects = [
   {
@@ -151,9 +152,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
                     <h4 className="text-xs font-mono text-white/40 uppercase tracking-wider mb-3">
                       Pipeline
                     </h4>
-                    <div className="text-xs text-muted font-mono bg-white/[0.03] border border-border rounded-lg p-4 leading-relaxed">
-                      {project.architecture}
-                    </div>
+                    <PipelineFlow steps={project.architecture} />
                   </div>
                 )}
 
