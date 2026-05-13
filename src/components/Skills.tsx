@@ -11,8 +11,8 @@ const categories = [
   {
     title: 'LLM & GenAI Systems',
     skills: [
-      'Open-weight LLM deployment (LLaMA, Mistral) with vLLM serving and continuous batching',
-      'RAG pipeline architecture: LangChain/LlamaIndex orchestration, ChromaDB/FAISS vector stores, hybrid search',
+      'Open-weight LLM deployment and serving with optimized inference engines (vLLM, SGLang, TensorRT-LLM)',
+      'RAG pipeline architecture: retrieval orchestration, vector databases, hybrid search, re-ranking',
       'Agentic workflows: tool-use, code generation, multi-step reasoning with self-hosted models',
       'Multimodal systems: vision-language models, neural TTS, document intelligence pipelines',
     ],
@@ -20,9 +20,9 @@ const categories = [
   {
     title: 'Inference Engineering',
     skills: [
-      'GPU inference optimization: NVIDIA CUDA, TensorRT (INT8/FP16), kernel fusion, tiled inference',
-      'Edge deployment on NVIDIA Jetson with DeepStream SDK and hardware-accelerated pipelines',
-      'Cross-platform inference strategy: CUDA for NVIDIA, MLX for Apple Silicon, ONNX for portability',
+      'GPU inference optimization: CUDA, TensorRT, kernel fusion, quantization, tiled inference',
+      'Edge deployment on NVIDIA Jetson with hardware-accelerated pipelines',
+      'Cross-platform inference strategy: target-dependent optimization for NVIDIA, Apple Silicon, and CPU backends',
       'End-to-end latency budgeting, throughput benchmarking, memory footprint optimization',
     ],
   },
