@@ -10,15 +10,15 @@ const projects = [
     challenge:
       'Build a production-grade system that detects vessels in high-resolution satellite imagery, computes geolocation coordinates and physical dimensions, and serves results through an operational dashboard — all within an air-gapped environment.',
     architecture:
-      'Satellite imagery → Tiled inference pipeline → YOLOv8 OBB detection → Rasterio geolocation engine → QGIS validation → FastAPI REST layer → ReactJS operational dashboard → PostgreSQL event store',
+      'Satellite imagery → Tiled inference pipeline → Orientation-aware object detection → Rasterio geolocation engine → QGIS validation → FastAPI REST layer → ReactJS operational dashboard → PostgreSQL event store',
     approach: [
-      'Trained YOLOv8 with Oriented Bounding Boxes (OBB) for rotated ship detection in overhead imagery across varied lighting and resolution conditions',
+      'Trained orientation-aware object detection models for rotated ship detection in overhead imagery across varied lighting and resolution conditions',
       'Built automated geolocation pipeline using Rasterio + QGIS for coordinate extraction, vessel length measurement, and real-world dimension computation from pixel space',
       'Architected FastAPI backend with ReactJS operational dashboard for real-time querying, filtering, and geospatial visualization',
       'Containerized entire stack with Docker for air-gapped deployment across naval command infrastructure with no external dependencies',
     ],
     outcome: 'Active across multiple naval commands. Reduces manual analysis time from hours to minutes for vessel identification and measurement tasks.',
-    tags: ['YOLOv8', 'OBB', 'Rasterio', 'QGIS', 'FastAPI', 'ReactJS', 'Docker', 'CUDA'],
+    tags: ['Object Detection', 'Oriented Bounding Boxes', 'Rasterio', 'QGIS', 'FastAPI', 'ReactJS', 'Docker', 'CUDA'],
   },
   {
     title: 'Offline GenAI Platform (Classified)',

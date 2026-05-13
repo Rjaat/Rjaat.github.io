@@ -7,7 +7,7 @@ const experiences = [
     location: 'New Delhi',
     period: 'Jul 2023 — Present',
     highlights: [
-      'Designed end-to-end satellite imagery analytics platform for maritime warship detection — YOLOv8 OBB, Rasterio geolocation, FastAPI backend, ReactJS dashboard; deployed across multiple naval commands',
+      'Designed end-to-end satellite imagery analytics platform for maritime warship detection — orientation-aware detection models, Rasterio geolocation, FastAPI backend, ReactJS dashboard; deployed across multiple naval commands',
       'Architected classified offline GenAI platform on air-gapped private cloud: RAG system (LangChain, vLLM, ChromaDB), automated report/presentation generator; reduced analyst documentation turnaround by ~60%',
       'Engineered real-time multi-camera surveillance with sub-50ms latency via TensorRT INT8 quantization and DeepStream on NVIDIA Jetson',
       'Built multimodal document intelligence system combining open-weight LLMs with neural TTS for podcast-style audio briefs',
