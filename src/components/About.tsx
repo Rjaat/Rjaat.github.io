@@ -26,11 +26,24 @@ const About = () => {
             className="space-y-6 text-muted leading-relaxed"
           >
             <p>
-              I design and build AI systems end-to-end. At WESEE Naval R&D Lab, that meant
-              training YOLOv8 OBB models for satellite imagery, then building the FastAPI
-              backend and React dashboard that put those detections into operators' hands.
-              It meant fine-tuning LLaMA, wiring up RAG pipelines with LangChain and
-              ChromaDB, and shipping a complete GenAI platform on a classified network.
+              I design and build AI systems end-to-end. That means training custom
+              vision models, fine-tuning LLMs, wiring up RAG pipelines, and shipping
+              the backend infrastructure and interfaces that put those capabilities
+              into production. I work across vision, language, and multimodal domains
+              — whatever the problem demands.
+            </p>
+            <p>
+              What sets my work apart is that I also own the infrastructure — not
+              because I'm an infra engineer, but because the environments I work in
+              don't have one. GPU cluster provisioning, self-hosted version control
+              and project management, distributed storage, internal networking — all
+              on systems with no internet access and no vendor dependencies.
+            </p>
+            <p>
+              The result is a rare combination: I can take an AI system from model
+              architecture and training data all the way to a deployed, containerized
+              application running on constrained hardware — and I own every layer
+              in between.
             </p>
             <p>
               What makes my work different is that I also own the infrastructure — not
