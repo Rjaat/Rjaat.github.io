@@ -1,5 +1,7 @@
 import { useState, useEffect, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
+import { EffectComposer, Bloom } from '@react-three/postprocessing'
+import { useScrollY } from './store/scroll'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Projects from './components/Projects'
@@ -31,6 +33,8 @@ function CursorGlow() {
 }
 
 function App() {
+  const scrollY = useScrollY()
+
   return (
     <div className="relative min-h-screen bg-surface">
       <div className="fixed inset-0 -z-10 cyber-grid opacity-40" />
@@ -38,16 +42,29 @@ function App() {
       <div className="fixed inset-0 -z-20">
         <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
           <Suspense fallback={null}>
-            <FloatingCube />
+            <FloatingCube scrollY={scrollY} />
+            <EffectComposer>
+              <Bloom
+                luminanceThreshold={0.6}
+                luminanceSmoothing={0.1}
+                intensity={0.3}
+                mipmapBlur
+              />
+            </EffectComposer>
           </Suspense>
         </Canvas>
       </div>
       <Navbar />
       <Hero />
+      <div className="section-divider" />
       <Projects />
+      <div className="section-divider" />
       <Experience />
+      <div className="section-divider" />
       <Skills />
+      <div className="section-divider" />
       <About />
+      <div className="section-divider" />
       <Contact />
     </div>
   )
