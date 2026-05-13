@@ -23,7 +23,7 @@ const experiences = [
     highlights: [
       'Trained and deployed custom Vision-Language Model for 911-inform alerting across schools and public venues',
       'Built complete smart-investigation pipeline: real-time threat detection, evidence capture, automated incident report generation',
-      'Architected MLOps platform with model versioning, CI/CD, containerized deployments, automated rollback, and production drift monitoring',
+      'Architected full ML lifecycle platform: data processing and augmentation pipelines, dataset versioning, model training orchestration, model registry, CI/CD for deployment, automated rollback, and production drift monitoring',
     ],
   },
   {

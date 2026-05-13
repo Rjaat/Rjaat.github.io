@@ -75,7 +75,7 @@ const projects = [
     approach: [
       'Trained and deployed custom Vision-Language Model for scene understanding and threat classification',
       'Built end-to-end pipeline: real-time detection → evidence capture → automated incident report generation',
-      'Architected MLOps platform with model versioning, CI/CD, containerized deployments, automated rollback, and production drift monitoring',
+      'Architected full ML lifecycle platform: data processing and augmentation pipelines, dataset versioning, model training orchestration, model registry, CI/CD for deployment, automated rollback, and production drift monitoring',
     ],
     outcome: 'Alert-to-report latency reduced from minutes to under 15 seconds. Zero-downtime model updates across multi-tenant environments.',
     tags: ['VLM', 'MLOps', 'CI/CD', 'Docker', 'Real-Time Inference', 'Drift Monitoring'],
