@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 const experiences = [
   {
     role: 'AI Systems Engineer',
@@ -46,24 +48,48 @@ const experiences = [
   },
 ]
 
+const container = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.15 },
+  },
+}
+
+const expItem = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
+}
+
 const Experience = () => {
   return (
     <section id="experience" className="py-32">
       <div className="max-w-5xl mx-auto px-6">
-        <div className="mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-20"
+        >
           <p className="section-label mb-4">Experience</p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Professional History
           </h2>
           <p className="text-muted max-w-2xl">
-            Building production AI systems for defense, public safety, and enterprise — from 
+            Building production AI systems for defense, public safety, and enterprise — from
             zero infrastructure to deployed platform.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="space-y-16">
+        <motion.div
+          className="space-y-16"
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-80px' }}
+        >
           {experiences.map((exp, i) => (
-            <div key={`${exp.role}-${exp.period}`}>
+            <motion.div key={`${exp.role}-${exp.period}`} variants={expItem}>
               <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8 mb-6">
                 <div className="md:col-span-3">
                   <h3 className="text-lg font-semibold text-white">{exp.role}</h3>
@@ -87,9 +113,9 @@ const Experience = () => {
                 ))}
               </ul>
               {i < experiences.length - 1 && <div className="h-px bg-border mt-16" />}
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )

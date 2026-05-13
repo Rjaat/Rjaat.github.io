@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 const categories = [
   {
     title: 'ML Systems',
@@ -61,24 +63,48 @@ const categories = [
   },
 ]
 
+const container = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.08 },
+  },
+}
+
+const catItem = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } },
+}
+
 const Skills = () => {
   return (
     <section id="skills" className="py-32">
       <div className="max-w-5xl mx-auto px-6">
-        <div className="mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-20"
+        >
           <p className="section-label mb-4">Skills</p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Technical Competencies
           </h2>
           <p className="text-muted max-w-2xl">
-            Full-stack AI engineering — from model training and quantized edge deployment to 
+            Full-stack AI engineering — from model training and quantized edge deployment to
             air-gapped infrastructure and operational dashboards.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-80px' }}
+        >
           {categories.map((cat) => (
-            <div key={cat.title}>
+            <motion.div key={cat.title} variants={catItem}>
               <h3 className="text-sm font-semibold text-white mb-4">{cat.title}</h3>
               <ul className="space-y-2">
                 {cat.skills.map((skill) => (
@@ -87,9 +113,9 @@ const Skills = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
