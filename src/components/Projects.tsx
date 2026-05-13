@@ -11,7 +11,7 @@ const projects = [
     challenge:
       'Build a production-grade system that detects vessels in high-resolution satellite imagery, computes geolocation coordinates and physical dimensions, and serves results through an operational dashboard — all within an air-gapped environment.',
     architecture:
-      'Satellite imagery → Tiled inference pipeline → Orientation-aware object detection → Geolocation engine → Spatial validation → API layer → Operational dashboard → Event store',
+      'Satellite imagery → Tiled inference pipeline → Orientation-aware detection → Geolocation engine → Spatial validation → API layer → Operational dashboard',
     approach: [
       'Trained orientation-aware object detection models for rotated ship detection in overhead imagery across varied lighting and resolution conditions',
       'Built automated geolocation pipeline using geospatial libraries for coordinate extraction, vessel length measurement, and real-world dimension computation from pixel space',
@@ -29,9 +29,9 @@ const projects = [
     challenge:
       'Deliver secure LLM capabilities — document Q&A, automated report generation, presentation creation — on a completely isolated network with no internet access, no cloud APIs, and no vendor dependencies.',
     architecture:
-      'Classified documents → Preprocessing → RAG pipeline (Chunking → Vector embedding → Hybrid retrieval) → LLM inference via optimized engine → Template engine → API → Operational interface',
+      'Classified documents → Preprocessing → Chunking → Vector embedding → Hybrid retrieval → LLM inference → Template engine → API → Web interface',
     approach: [
-      'Deployed open-weight LLMs with optimized inference engine and continuous batching, achieving 40% lower memory footprint and 2.3x throughput vs baseline defaults',
+      'Deployed open-weight LLMs with optimized inference engine and continuous batching, achieving 40% lower memory footprint and 2.3x throughput improvement',
       'Built RAG pipeline with retrieval orchestration, vector storage, and hybrid search (dense + keyword) for improved retrieval accuracy on domain-specific terminology',
       'Engineered automated report and presentation generator from institutional document templates, reducing analyst documentation turnaround by an estimated 60%',
       'Designed API backend with web interface for operational use by non-technical personnel',
@@ -47,7 +47,7 @@ const projects = [
     challenge:
       'Build a system that processes multiple simultaneous video feeds for vessel and human motion detection, generates event-level metadata (timestamp, duration, type), and runs on edge devices with strict latency requirements.',
     architecture:
-      'Multi-camera feeds → Hardware-accelerated video pipeline → Optimized detection inference → Multi-object tracker → Trajectory estimator → Behavioral classifier → Metadata logger → Clip stitcher → Event API → Timeseries store',
+      'Multi-camera feeds → Hardware-accelerated pipeline → Detection → Multi-object tracker → Trajectory estimator → Behavior classifier → Metadata logger → Clip stitcher → Event API → Timeseries store',
     approach: [
       'Architected hardware-accelerated video pipeline on edge devices for multi-stream inference across 8+ simultaneous camera feeds',
       'Applied model quantization with tiled inference, achieving sub-50ms p99 end-to-end latency per frame',
@@ -55,7 +55,7 @@ const projects = [
       'Built automatic clip stitching with event-aligned metadata (timestamp, duration, object class, trajectory) for post-mission forensic review',
     ],
     outcome: 'Sub-50ms p99 inference latency on edge hardware. Production deployment on naval surveillance vessels. Replaces manual footage review with automated event logging.',
-    tags: ['Video Analytics', 'Multi-Object Tracking', 'Edge Deployment', 'Model Quantization', 'GPU Acceleration', 'Docker', 'Real-Time Systems'],
+    tags: ['Video Analytics', 'Multi-Object Tracking', 'Edge Deployment', 'Model Quantization', 'GPU Acceleration', 'Docker', 'Real-Time Processing'],
   },
   {
     title: 'Self-Hosted Agentic Coding Assistant',
@@ -65,7 +65,7 @@ const projects = [
     challenge:
       'Create a secure coding assistant that can generate code, write tests, and produce documentation — without sending any proprietary code to external APIs — while maintaining context across multi-file codebases.',
     architecture:
-      'Self-hosted LLMs → Optimized inference serving → Agent orchestration framework with tool definitions → Code sandbox for execution validation → Version control integration → Feedback loop via human review',
+      'Self-hosted LLMs → Optimized inference serving → Agent orchestration → Tool execution sandbox → Code generation → Test scaffolding → Merge request integration → Human review loop',
     approach: [
       'Deployed large open-weight LLMs on private GPU infrastructure with optimized inference serving and efficient memory management',
       'Built agentic workflow using orchestration framework: plan → generate → validate → iterate loop with tools for file read/write, version control operations, and test execution in isolated sandbox',
@@ -82,6 +82,8 @@ const projects = [
       'VLM-powered alerting system combining real-time weapon detection with automated vision-language investigation across schools and public venues.',
     challenge:
       'Build a complete smart-investigation pipeline that detects threats in real-time, captures forensic evidence, and generates incident reports — reducing manual investigation time from minutes to seconds.',
+    architecture:
+      'Camera feeds → Real-time detection inference → Detection knowledge base → VLM investigation → Evidence capture → Incident report generation → Alert dispatch → MLOps platform (data versioning → training → registry → deployment → monitoring)',
     approach: [
       'Trained real-time weapon detection models optimized for surveillance camera perspectives with varied lighting and occlusion',
       'Integrated a Vision-Language Model that performs automated reasoning on the detection knowledge base — not raw video, but structured detection events with temporal context',
