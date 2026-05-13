@@ -1,101 +1,105 @@
-import { useRef } from 'react'
+import { useRef, useMemo } from 'react'
 import { useFrame } from '@react-three/fiber'
-import { Mesh } from 'three'
+import * as THREE from 'three'
 
-const FloatingCube = () => {
-  const meshRef = useRef<Mesh>(null!)
-  const mesh2Ref = useRef<Mesh>(null!)
-  const mesh3Ref = useRef<Mesh>(null!)
+const NODE_COUNT = 40
+const CONNECTION_DIST = 6
+const DEPTH = -12
 
-  useFrame((state, delta) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x += delta * 0.3
-      meshRef.current.rotation.y += delta * 0.2
-      meshRef.current.position.y = Math.sin(state.clock.elapsedTime) * 0.5
+function Nodes() {
+  const ref = useRef<THREE.Points>(null!)
+  const positions = useMemo(() => {
+    const pos = new Float32Array(NODE_COUNT * 3)
+    for (let i = 0; i < NODE_COUNT; i++) {
+      pos[i * 3] = (Math.random() - 0.5) * 18
+      pos[i * 3 + 1] = (Math.random() - 0.5) * 12
+      pos[i * 3 + 2] = (Math.random() - 0.5) * 8 + DEPTH
     }
-    
-    if (mesh2Ref.current) {
-      mesh2Ref.current.rotation.x -= delta * 0.2
-      mesh2Ref.current.rotation.z += delta * 0.4
-      mesh2Ref.current.position.y = Math.cos(state.clock.elapsedTime * 0.8) * 0.3
-    }
-    
-    if (mesh3Ref.current) {
-      mesh3Ref.current.rotation.y += delta * 0.5
-      mesh3Ref.current.rotation.z -= delta * 0.1
-      mesh3Ref.current.position.x = Math.sin(state.clock.elapsedTime * 0.5) * 0.8
+    return pos
+  }, [])
+
+  useFrame((_state, delta) => {
+    if (ref.current) {
+      ref.current.rotation.y += delta * 0.03
+      ref.current.rotation.x += delta * 0.01
     }
   })
 
   return (
-    <>
-      {/* Ambient and directional lighting */}
-      <ambientLight intensity={0.3} />
-      <directionalLight position={[10, 10, 5]} intensity={0.5} />
-      <pointLight position={[-10, -10, -5]} intensity={0.3} color="#6366f1" />
-      
-      {/* Main floating cube */}
-      <mesh ref={meshRef} position={[3, 0, -8]} scale={0.8}>
-        <boxGeometry args={[1.5, 1.5, 1.5]} />
-        <meshStandardMaterial
-          color="#6366f1"
-          transparent
-          opacity={0.4}
-          wireframe
-          emissive="#6366f1"
-          emissiveIntensity={0.1}
+    <points ref={ref}>
+      <bufferGeometry>
+        <bufferAttribute
+          attach="attributes-position"
+          count={NODE_COUNT}
+          array={positions}
+          itemSize={3}
         />
-      </mesh>
-      
-      {/* Secondary geometric shape */}
-      <mesh ref={mesh2Ref} position={[-4, 2, -6]} scale={0.6}>
-        <octahedronGeometry args={[1]} />
-        <meshStandardMaterial
-          color="#8b5cf6"
-          transparent
-          opacity={0.3}
-          wireframe
-          emissive="#8b5cf6"
-          emissiveIntensity={0.1}
-        />
-      </mesh>
-      
-      {/* Tertiary shape */}
-      <mesh ref={mesh3Ref} position={[0, -3, -10]} scale={0.5}>
-        <tetrahedronGeometry args={[1.2]} />
-        <meshStandardMaterial
-          color="#06b6d4"
-          transparent
-          opacity={0.35}
-          wireframe
-          emissive="#06b6d4"
-          emissiveIntensity={0.1}
-        />
-      </mesh>
-      
-      {/* Floating particles */}
-      {[...Array(15)].map((_, i) => (
-        <mesh
-          key={i}
-          position={[
-            (Math.random() - 0.5) * 20,
-            (Math.random() - 0.5) * 20,
-            (Math.random() - 0.5) * 20
-          ]}
-          scale={0.1}
-        >
-          <sphereGeometry args={[0.1]} />
-          <meshStandardMaterial
-            color={['#6366f1', '#8b5cf6', '#06b6d4'][i % 3]}
-            transparent
-            opacity={0.6}
-            emissive={['#6366f1', '#8b5cf6', '#06b6d4'][i % 3]}
-            emissiveIntensity={0.2}
-          />
-        </mesh>
-      ))}
-    </>
+      </bufferGeometry>
+      <pointsMaterial
+        size={0.12}
+        color="#06b6d4"
+        transparent
+        opacity={0.6}
+        sizeAttenuation
+      />
+    </points>
   )
 }
 
-export default FloatingCube
+function Connections() {
+  const ref = useRef<THREE.LineSegments>(null!)
+  const positions = useMemo(() => {
+    const nodes: THREE.Vector3[] = []
+    for (let i = 0; i < NODE_COUNT; i++) {
+      nodes.push(
+        new THREE.Vector3(
+          (Math.random() - 0.5) * 18,
+          (Math.random() - 0.5) * 12,
+          (Math.random() - 0.5) * 8 + DEPTH
+        )
+      )
+    }
+
+    const pairs: number[] = []
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        if (nodes[i].distanceTo(nodes[j]) < CONNECTION_DIST) {
+          pairs.push(nodes[i].x, nodes[i].y, nodes[i].z)
+          pairs.push(nodes[j].x, nodes[j].y, nodes[j].z)
+        }
+      }
+    }
+    return new Float32Array(pairs)
+  }, [])
+
+  useFrame((_state, delta) => {
+    if (ref.current) {
+      ref.current.rotation.y += delta * 0.03
+      ref.current.rotation.x += delta * 0.01
+    }
+  })
+
+  return (
+    <lineSegments ref={ref}>
+      <bufferGeometry>
+        <bufferAttribute
+          attach="attributes-position"
+          count={positions.length / 3}
+          array={positions}
+          itemSize={3}
+        />
+      </bufferGeometry>
+      <lineBasicMaterial color="#06b6d4" transparent opacity={0.08} />
+    </lineSegments>
+  )
+}
+
+export default function FloatingCube() {
+  return (
+    <>
+      <ambientLight intensity={0.4} />
+      <Nodes />
+      <Connections />
+    </>
+  )
+}
