@@ -1,5 +1,4 @@
-import { useState, useEffect, Suspense } from 'react'
-import { Canvas } from '@react-three/fiber'
+import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Projects from './components/Projects'
@@ -7,7 +6,6 @@ import Experience from './components/Experience'
 import Skills from './components/Skills'
 import About from './components/About'
 import Contact from './components/Contact'
-import FloatingCube from './components/3D/FloatingCube'
 
 function CursorGlow() {
   const [pos, setPos] = useState({ x: -100, y: -100 })
@@ -30,30 +28,9 @@ function CursorGlow() {
   )
 }
 
-function Scene() {
-  return (
-    <Canvas
-      camera={{ position: [0, 0, 6], fov: 60 }}
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        pointerEvents: 'none',
-      }}
-    >
-      <Suspense fallback={null}>
-        <FloatingCube />
-      </Suspense>
-    </Canvas>
-  )
-}
-
 function App() {
   return (
     <div className="relative min-h-screen bg-surface">
-      <Scene />
       <div className="fixed inset-0 -z-10 cyber-grid opacity-30 pointer-events-none" />
       <CursorGlow />
       <Navbar />
