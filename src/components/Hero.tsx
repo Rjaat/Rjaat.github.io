@@ -39,10 +39,11 @@ const Hero = () => {
             variants={item}
             className="text-lg md:text-xl text-muted leading-relaxed mb-12 max-w-2xl"
           >
-            I architect and deploy AI infrastructure for environments where connectivity
-            doesn't exist — air-gapped defense systems, edge devices, and private clouds.
-            Satellite imagery analytics at naval command scale. GenAI platforms on
-            classified networks. Real-time surveillance at sub-50ms latency.
+            I design and build end-to-end AI systems — from training custom vision models
+            and LLM pipelines to shipping production applications at naval command scale.
+            Satellite imagery analytics, air-gapped GenAI platforms, real-time surveillance
+            at sub-50ms latency. I own the full stack because the environments I work in
+            don't have a platform team to fall back on.
           </motion.p>
 
           <motion.div variants={item} className="flex items-center gap-4 mb-16">

@@ -26,21 +26,24 @@ const About = () => {
             className="space-y-6 text-muted leading-relaxed"
           >
             <p>
-              Most AI systems are built expecting reliable internet, cloud APIs, and endless
-              compute. I build for the opposite — air-gapped networks, NVIDIA Jetson edge
-              devices, and environments where every megabyte and millisecond counts.
+              I design and build AI systems end-to-end. At WESEE Naval R&D Lab, that meant
+              training YOLOv8 OBB models for satellite imagery, then building the FastAPI
+              backend and React dashboard that put those detections into operators' hands.
+              It meant fine-tuning LLaMA, wiring up RAG pipelines with LangChain and
+              ChromaDB, and shipping a complete GenAI platform on a classified network.
             </p>
             <p>
-              My work spans the full stack: training custom vision models for satellite
-              imagery, quantizing them to run at sub-50ms on edge hardware, deploying RAG
-              pipelines on classified networks with zero external dependencies, and building
-              the GPU infrastructure that makes it all possible.
+              What makes my work different is that I also own the infrastructure — not
+              because I'm an infra engineer, but because these environments don't have one.
+              GPU cluster provisioning, self-hosted GitLab and Jira, distributed object
+              storage with SeaweedFS, internal SMTP and PKI — all on fully air-gapped
+              systems with zero vendor dependency. I build it because it has to exist.
             </p>
             <p>
-              I don't just train models — I architect systems. At WESEE Naval R&D Lab, I
-              built the entire AI/ML infrastructure from zero: GPU cluster provisioning,
-              self-hosted GitLab and Jira, distributed object storage, internal SMTP and
-              PKI — all on fully air-gapped systems with no vendor dependency.
+              The result is a rare combination: I can take an AI system from model
+              architecture and training data all the way to a deployed, containerized
+              application running on edge hardware in a disconnected environment — and
+              I own every layer in between.
             </p>
           </motion.div>
 
