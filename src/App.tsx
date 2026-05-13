@@ -9,13 +9,18 @@ import Contact from './components/Contact'
 function App() {
   return (
     <div className="relative min-h-screen bg-surface">
-      <div className="noise" />
+      <div className="fixed inset-0 -z-10 cyber-grid opacity-30 pointer-events-none" />
       <Navbar />
       <Hero />
+      <div className="section-divider" />
       <Projects />
+      <div className="section-divider" />
       <Experience />
+      <div className="section-divider" />
       <Skills />
+      <div className="section-divider" />
       <About />
+      <div className="section-divider" />
       <Contact />
     </div>
   )

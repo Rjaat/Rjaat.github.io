@@ -30,9 +30,9 @@ const Hero = () => {
 
           <motion.h1
             variants={item}
-            className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1] text-white"
+            className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1]"
           >
-            Rajesh K. Jat
+            <span className="gradient-text">Rajesh K. Jat</span>
           </motion.h1>
 
           <motion.p
