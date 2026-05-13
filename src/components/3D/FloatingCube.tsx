@@ -2,66 +2,30 @@ import { useRef, useMemo } from 'react'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 
-const NODE_COUNT = 100
-const CONNECTION_DIST = 5
-const DEPTH = -8
+const NODE_COUNT = 80
 
-function Network({ scrollY = 0 }: { scrollY?: number }) {
+function Network() {
   const groupRef = useRef<THREE.Group>(null!)
   const pointsRef = useRef<THREE.Points>(null!)
 
-  const { positions, connections, colors } = useMemo(() => {
+  const positions = useMemo(() => {
     const pos = new Float32Array(NODE_COUNT * 3)
-    const col = new Float32Array(NODE_COUNT * 3)
-    const nodes: THREE.Vector3[] = []
-
     for (let i = 0; i < NODE_COUNT; i++) {
-      const x = (Math.random() - 0.5) * 16
-      const y = (Math.random() - 0.5) * 12
-      const z = (Math.random() - 0.5) * 8 + DEPTH
-      pos[i * 3] = x
-      pos[i * 3 + 1] = y
-      pos[i * 3 + 2] = z
-
-      const t = Math.random()
-      col[i * 3] = 0.1 + t * 0.1
-      col[i * 3 + 1] = 0.7 + t * 0.3
-      col[i * 3 + 2] = 0.85 + t * 0.15
-
-      nodes.push(new THREE.Vector3(x, y, z))
+      pos[i * 3] = (Math.random() - 0.5) * 10
+      pos[i * 3 + 1] = (Math.random() - 0.5) * 8
+      pos[i * 3 + 2] = (Math.random() - 0.5) * 6 - 3
     }
-
-    const pairs: number[] = []
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
-        if (nodes[i].distanceTo(nodes[j]) < CONNECTION_DIST) {
-          pairs.push(nodes[i].x, nodes[i].y, nodes[i].z)
-          pairs.push(nodes[j].x, nodes[j].y, nodes[j].z)
-        }
-      }
-    }
-
-    return { positions: pos, connections: new Float32Array(pairs), colors: col }
+    return pos
   }, [])
 
-  const mouseTarget = useRef({ x: 0, y: 0 })
-  const scrollTarget = useRef(0)
-
-  useFrame((state, _delta) => {
-    mouseTarget.current.x += (state.pointer.x * 0.4 - mouseTarget.current.x) * 0.02
-    mouseTarget.current.y += (-state.pointer.y * 0.4 - mouseTarget.current.y) * 0.02
-    scrollTarget.current += (scrollY * 0.0003 - scrollTarget.current) * 0.03
-
+  useFrame((state) => {
     if (groupRef.current) {
-      groupRef.current.rotation.y += (mouseTarget.current.x - groupRef.current.rotation.y) * 0.02
-      groupRef.current.rotation.x += (mouseTarget.current.y - groupRef.current.rotation.x) * 0.02
-      groupRef.current.position.y = -scrollTarget.current * 1.5
+      groupRef.current.rotation.y = state.pointer.x * 0.15
+      groupRef.current.rotation.x = state.pointer.y * 0.1
     }
-
     if (pointsRef.current) {
       const mat = pointsRef.current.material as THREE.PointsMaterial
-      const pulse = Math.sin(state.clock.elapsedTime * 0.4) * 0.06 + 0.18
-      mat.size = pulse
+      mat.size = 0.3 + Math.sin(state.clock.elapsedTime * 0.5) * 0.1
     }
   })
 
@@ -75,43 +39,24 @@ function Network({ scrollY = 0 }: { scrollY?: number }) {
             array={positions}
             itemSize={3}
           />
-          <bufferAttribute
-            attach="attributes-color"
-            count={NODE_COUNT}
-            array={colors}
-            itemSize={3}
-          />
         </bufferGeometry>
         <pointsMaterial
-          size={0.3}
-          vertexColors
+          size={0.35}
+          color="#22d3ee"
           transparent
-          opacity={0.7}
+          opacity={0.8}
           sizeAttenuation
-          depthWrite={true}
         />
       </points>
-
-      <lineSegments>
-        <bufferGeometry>
-          <bufferAttribute
-            attach="attributes-position"
-            count={connections.length / 3}
-            array={connections}
-            itemSize={3}
-          />
-        </bufferGeometry>
-        <lineBasicMaterial color="#06b6d4" transparent opacity={0.12} depthWrite={false} />
-      </lineSegments>
     </group>
   )
 }
 
-export default function FloatingCube({ scrollY }: { scrollY?: number }) {
+export default function FloatingCube() {
   return (
     <>
-      <ambientLight intensity={0.3} />
-      <Network scrollY={scrollY} />
+      <ambientLight intensity={0.5} />
+      <Network />
     </>
   )
 }
